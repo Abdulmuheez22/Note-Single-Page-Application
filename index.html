@@ -690,6 +690,10 @@ option{
     background: #e8d5b7;
     color: #1a1a2e;
 }
+/* FIX: #notepage has an ID-based background, so it needs an equally specific light-mode rule */
+#notepage.mainbglightmode{
+    background: #e8d5b7;
+}
 .sidebarlightbg{
     background: #c9b090;
     color: #e8d5b7;
@@ -1149,6 +1153,7 @@ function toggleTheme(){
         document.getElementById("sidebar").classList.add("sidebarlightbg");
         document.getElementById("overflowsidebar").classList.add("styleboder");
         document.getElementById("notebookdiv").classList.add("mainbglightmode");
+        document.getElementById("notepage").classList.add("mainbglightmode"); // FIX
         document.getElementById("notepagefooter").classList.add("headerbglightmode");
         document.getElementById("notepageheader").classList.add("headerbglightmode");
         document.getElementById("themeToggle").classList.add("mainbglightmode")
@@ -1163,8 +1168,10 @@ function toggleTheme(){
         document.getElementById("sidebar").classList.remove("sidebarlightbg");
         document.getElementById("overflowsidebar").classList.remove("styleboder");
         document.getElementById("notebookdiv").classList.remove("mainbglightmode");
+        document.getElementById("notepage").classList.remove("mainbglightmode"); // FIX
         document.getElementById("notepagefooter").classList.remove("headerbglightmode");
         document.getElementById("notepageheader").classList.remove("headerbglightmode");
+        document.getElementById("themeToggle").classList.remove("mainbglightmode"); // FIX
         document.getElementById("themeToggle").style.background = "#8b4513";
         document.getElementById("togglestate").textContent = "🌙 Dark Mode";
         document.getElementById("nonotefound").classList.remove("nonotefoundlight");
